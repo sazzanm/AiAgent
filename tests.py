@@ -1,10 +1,7 @@
 from functions.get_files_info import get_files_info
+from functions.get_file_content import get_file_content
+from functions.write_file import write_file
 
-if __name__ == "__main__":
-    print(get_files_info("calculator", "."))
-    print()
-    print(get_files_info("calculator", "pkg"))
-    print()
-    print(get_files_info("calculator", "/bin"))  # debería mostrar error
-    print()
-    print(get_files_info("calculator", "../"))   # también debería mostrar error
+print(write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum"))
+print(write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet"))
+print(write_file("calculator", "/tmp/temp.txt", "this should not be allowed"))
